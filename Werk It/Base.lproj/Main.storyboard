@@ -44,10 +44,39 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1VA-dX-1Cv" userLabel="hasTimerStack">
+                                                <rect key="frame" x="16" y="305.5" width="802" height="34"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="240" translatesAutoresizingMaskIntoConstraints="NO" id="vv0-jQ-dcv" userLabel="timeAndStartButtonStack">
+                                                        <rect key="frame" x="0.0" y="0.0" width="802" height="30"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOM-xV-qL0" userLabel="timerLabel">
+                                                                <rect key="frame" x="0.0" y="0.0" width="281" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGJ-s0-yNz" userLabel="startTimerButton">
+                                                                <rect key="frame" x="521" y="0.0" width="281" height="30"/>
+                                                                <state key="normal" title="Start"/>
+                                                                <connections>
+                                                                    <action selector="clickedStartTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vx9-hw-MQc"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QSj-WX-krp" userLabel="timerProgressBar">
+                                                        <rect key="frame" x="0.0" y="30" width="802" height="4"/>
+                                                    </progressView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                         <constraints>
+                                            <constraint firstItem="1VA-dX-1Cv" firstAttribute="leading" secondItem="0nm-9c-s52" secondAttribute="leading" constant="16" id="Lpv-JM-Bk2"/>
+                                            <constraint firstAttribute="trailing" secondItem="1VA-dX-1Cv" secondAttribute="trailing" constant="16" id="h9q-Zp-6Sq"/>
                                             <constraint firstItem="dgA-L6-kIp" firstAttribute="centerY" secondItem="0nm-9c-s52" secondAttribute="centerY" id="iAH-a3-RCf"/>
+                                            <constraint firstAttribute="bottom" secondItem="1VA-dX-1Cv" secondAttribute="bottom" constant="5" id="kvv-le-RYK"/>
                                             <constraint firstItem="dgA-L6-kIp" firstAttribute="centerX" secondItem="0nm-9c-s52" secondAttribute="centerX" id="rzF-aI-54h"/>
                                         </constraints>
                                     </view>
@@ -115,8 +144,11 @@
                     </view>
                     <connections>
                         <outlet property="firstLabel" destination="Az1-j9-WBA" id="obU-7a-iVG"/>
+                        <outlet property="hasTimerStackView" destination="1VA-dX-1Cv" id="RNb-yc-Grj"/>
                         <outlet property="secondLabel" destination="dgA-L6-kIp" id="tGm-t5-AGq"/>
                         <outlet property="thirdLabel" destination="Kdp-b0-wEa" id="3jM-Dh-T3a"/>
+                        <outlet property="timerLabel" destination="iOM-xV-qL0" id="j02-qZ-6In"/>
+                        <outlet property="timerProgressBar" destination="QSj-WX-krp" id="7tH-Zk-h00"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

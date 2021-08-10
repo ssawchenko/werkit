@@ -41,21 +41,25 @@ struct PersonalTrainer {
     ]
 
     func generateWorkout(userEquipment: Equipment) -> [Exercise] {
-        var firstExerciseList = allCoreExersises.filter { exercise in
-            exercise.canBeDone(userHasEquipment: userEquipment)
-        }
-        var secondExerciseList = allArmExercises
-        var thirdExerciseList = allLegExercises
+        var firstExerciseList = getDoableExercises(allCoreExersises, userEquipment)
+        var secondExerciseList = getDoableExercises(allArmExercises, userEquipment)
+        var thirdExerciseList = getDoableExercises(allLegExercises, userEquipment)
 
         var result: [Exercise] = []
-        result.append(getAndRemoveFrom(&firstExerciseList))
-        result.append(getAndRemoveFrom(&secondExerciseList))
-        result.append(getAndRemoveFrom(&thirdExerciseList))
+        result.append(removeRandom(&firstExerciseList))
+        result.append(removeRandom(&secondExerciseList))
+        result.append(removeRandom(&thirdExerciseList))
 
         return result
     }
 
-    private func getAndRemoveFrom(_ excerises: inout [Exercise]) -> Exercise {
+    private func getDoableExercises(_ exercises: [Exercise], _ userEquipment: Equipment) -> [Exercise] {
+        return exercises.filter { exercise in
+            exercise.canBeDone(userHasEquipment: userEquipment)
+        }
+    }
+
+    private func removeRandom(_ excerises: inout [Exercise]) -> Exercise {
         let index = Int.random(in: 0..<excerises.count)
         return excerises.remove(at: index)
     }

@@ -35,10 +35,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstLabel.text = ""
+        secondLabel.text = ""
+        thirdLabel.text = ""
     }
 
     @IBAction func clickedWerkit(_ sender: UIButton) {
-        let exercises = personalTrainer.generateWorkout()
+        //let hasEquipment = Equipment(sweedishBall: true, resistanceBands: true)
+        let hasEquipment = Equipment(hasAll: true)
+        let exercises = personalTrainer.generateWorkout(userEquipment: hasEquipment)
 
         // For now force exercise to be hardcoded to second, but will be based on custom UI component eventually
         setupTimer(exercise: exercises[1])

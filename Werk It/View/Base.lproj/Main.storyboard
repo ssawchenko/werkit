@@ -28,11 +28,11 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Az1-j9-WBA" userLabel="FirstLabel">
                                                         <rect key="frame" x="171.5" y="101" width="71" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                                <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="Az1-j9-WBA" firstAttribute="centerY" secondItem="00d-vS-Vkm" secondAttribute="centerY" id="dUS-VW-OXK"/>
                                                     <constraint firstItem="Az1-j9-WBA" firstAttribute="centerX" secondItem="00d-vS-Vkm" secondAttribute="centerX" id="l3z-T7-3vQ"/>
@@ -44,23 +44,25 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgA-L6-kIp" userLabel="SecondLabel">
                                                         <rect key="frame" x="171.5" y="101" width="71" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1VA-dX-1Cv" userLabel="hasTimerStack">
-                                                        <rect key="frame" x="16" y="199" width="382" height="34"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1VA-dX-1Cv" userLabel="hasTimerStack">
+                                                        <rect key="frame" x="16" y="189" width="382" height="44"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="240" translatesAutoresizingMaskIntoConstraints="NO" id="vv0-jQ-dcv" userLabel="timeAndStartButtonStack">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="fvY-j9-p7P">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOM-xV-qL0" userLabel="timerLabel">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="30"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="210" height="30"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGJ-s0-yNz" userLabel="startTimerButton">
-                                                                        <rect key="frame" x="311" y="0.0" width="71" height="30"/>
+                                                                        <rect key="frame" x="210" y="0.0" width="172" height="30"/>
+                                                                        <color key="backgroundColor" red="0.54863638680000004" green="0.062902732010000004" blue="0.69806606069999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <state key="normal" title="Start"/>
                                                                         <connections>
                                                                             <action selector="clickedStartTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vx9-hw-MQc"/>
@@ -69,7 +71,8 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QSj-WX-krp" userLabel="timerProgressBar">
-                                                                <rect key="frame" x="0.0" y="30" width="382" height="4"/>
+                                                                <rect key="frame" x="0.0" y="40" width="382" height="4"/>
+                                                                <color key="tintColor" red="0.54863638680000004" green="0.062902732010000004" blue="0.69806606069999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             </progressView>
                                                         </subviews>
                                                     </stackView>
@@ -89,11 +92,11 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdp-b0-wEa" userLabel="ThirdLabel">
                                                         <rect key="frame" x="171.5" y="100.5" width="71" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="Kdp-b0-wEa" firstAttribute="centerY" secondItem="igD-3K-06v" secondAttribute="centerY" id="jmI-xb-LSS"/>
                                                     <constraint firstItem="Kdp-b0-wEa" firstAttribute="centerX" secondItem="igD-3K-06v" secondAttribute="centerX" id="lNy-1I-CUT"/>
@@ -110,17 +113,17 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3M-tF-bMH">
                                                 <rect key="frame" x="153" y="13.5" width="108" height="48"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <state key="normal" title="Werk it!">
-                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="clickedWerkit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Cr-FJ-x3b"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="O3M-tF-bMH" firstAttribute="centerX" secondItem="iNw-KU-9Lg" secondAttribute="centerX" id="NwY-3X-Pb6"/>
                                             <constraint firstItem="O3M-tF-bMH" firstAttribute="centerY" secondItem="iNw-KU-9Lg" secondAttribute="centerY" id="aah-gu-1te"/>
@@ -128,7 +131,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -158,14 +161,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

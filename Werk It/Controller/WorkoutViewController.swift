@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class WorkoutViewController: UIViewController {
 
     @IBOutlet weak var firstLabel: UILabel!
 
@@ -26,6 +26,8 @@ class ViewController: UIViewController {
 
     private let personalTrainer = PersonalTrainer()
 
+    var userHasEquipment = Equipment(hasAll: true)
+
     var selectedExercise: Exercise? = nil
     var readyTimer = Timer()
     var exerciseTimer = Timer()
@@ -38,9 +40,14 @@ class ViewController: UIViewController {
         firstLabel.text = ""
         secondLabel.text = ""
         thirdLabel.text = ""
+        generateWorkout()
     }
 
     @IBAction func clickedWerkit(_ sender: UIButton) {
+        generateWorkout()
+    }
+
+    private func generateWorkout() {
         let hasEquipment = Equipment(sweedishBall: true, resistanceBands: true)
         //let hasEquipment = Equipment(hasAll: true)
         let exercises = personalTrainer.generateWorkout(userEquipment: hasEquipment)

@@ -19,7 +19,6 @@
 		4E294A7526C4C5F6002BA36E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E294A7426C4C5F6002BA36E /* Exercise.swift */; };
 		4E294A7726C4C624002BA36E /* Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E294A7626C4C624002BA36E /* Variation.swift */; };
 		4E294A7C26C61D2A002BA36E /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E294A7B26C61D2A002BA36E /* SetupViewController.swift */; };
-		4EAA3EFA26C236E3005B9868 /* Exercise_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA3EF926C236E3005B9868 /* Exercise_old.swift */; };
 		4EAA3EFD26C237B4005B9868 /* PersonalTrainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA3EFC26C237B4005B9868 /* PersonalTrainer.swift */; };
 		4EAA3EFF26C240A7005B9868 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA3EFE26C240A7005B9868 /* Equipment.swift */; };
 		4EAA3F0926C255F5005B9868 /* F.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4EAA3F0226C255F5005B9868 /* F.wav */; };
@@ -46,7 +45,6 @@
 		4E294A7426C4C5F6002BA36E /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		4E294A7626C4C624002BA36E /* Variation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variation.swift; sourceTree = "<group>"; };
 		4E294A7B26C61D2A002BA36E /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
-		4EAA3EF926C236E3005B9868 /* Exercise_old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise_old.swift; sourceTree = "<group>"; };
 		4EAA3EFC26C237B4005B9868 /* PersonalTrainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalTrainer.swift; sourceTree = "<group>"; };
 		4EAA3EFE26C240A7005B9868 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		4EAA3F0226C255F5005B9868 /* F.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = F.wav; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 		4EAA3EFB26C2370A005B9868 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4EAA3EF926C236E3005B9868 /* Exercise_old.swift */,
 				4E294A6A26C394EC002BA36E /* Exercises.swift */,
 				4EAA3EFE26C240A7005B9868 /* Equipment.swift */,
 				4EAA3EFC26C237B4005B9868 /* PersonalTrainer.swift */,
@@ -225,7 +222,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E0ECDAD26BF572C00D6324D /* WorkoutViewController.swift in Sources */,
-				4EAA3EFA26C236E3005B9868 /* Exercise_old.swift in Sources */,
 				4E0ECDA926BF572C00D6324D /* AppDelegate.swift in Sources */,
 				4E294A6F26C39EA4002BA36E /* Body.swift in Sources */,
 				4E294A7C26C61D2A002BA36E /* SetupViewController.swift in Sources */,

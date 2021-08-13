@@ -73,82 +73,216 @@ struct Exercises {
         )
 
     static let allCoreExercises = [deadBug, windshieldWipers, birdDogs]
-    static let allArmExercises = [deadBug, windshieldWipers, birdDogs]
-    static let allLegExercises = [deadBug, windshieldWipers, birdDogs]
 
-//    static let allCoreExersises: [Exercise] = [
-//        Exercise(title: "Dead Bug w/Band",
-//                 difficulty: Difficulty.easy,
-//                 reps: 20,
-//                 requirements: Equipment(resistanceBands: true)),
-//
-//        Exercise(title: "Dead Bug w/Ball",
-//                 difficulty: Difficulty.easy,
-//                 reps: 20,
-//                 requirements: Equipment(sweedishBall: true)),
-//
-//        Exercise(title: "Windshield Wipers",
-//                 difficulty: Difficulty.easy,
-//                 reps: 20)
-//    ]
+    static let inclinePushup =
+        Exercise(
+            name: "Incline Pushups",
+            description: "",
+            variations: [
+                Variation(
+                    name: "Basic",
+                    description: nil,
+                    difficulty: Difficulty.easy,
+                    equipment: Equipment(bench: true),
+                    reps: 12,
+                    seconds: nil
+                )
+            ]
+        )
 
-//    static let allArmExercises: [Exercise] = [
-//        Exercise(title: "Incline Pushups",
-//                 difficulty: Difficulty.easy,
-//                 reps: 10,
-//                 requirements: Equipment(bench: true)),
-//
-//        Exercise(title: "Resistance Band Pulls",
-//                 difficulty: Difficulty.easy,
-//                 reps: 10,
-//                 requirements: Equipment(resistanceBands: true)),
-//
-//        Exercise(title: "Side Planks (L/R)",
-//                 difficulty: Difficulty.easy,
-//                 reps: 2,
-//                 hasTimerSeconds: 20),
-//
-//        Exercise(title: "Bird Dogs (L/R)",
-//                 difficulty: Difficulty.easy,
-//                 reps: 12)
-//    ]
-//
-//    static let allLegExercises: [Exercise] = [
-//        Exercise(title: "Squats w/Weights",
-//                 difficulty: Difficulty.easy,
-//                 reps: 20),
-//
-//        Exercise(title: "Ham Curls (L/R)",
-//                 difficulty: Difficulty.easy,
-//                 reps: 16),
-//
-//        Exercise(title: "Split Squats w/Weights (L/R)",
-//                 difficulty: Difficulty.easy,
-//                 reps: 10),
-//
-//        Exercise(title: "Lunges w/Weights (L/R)",
-//                 difficulty: Difficulty.easy,
-//                 reps: 10),
-//
-//        Exercise(title: "Monster Walks (L/R)",
-//                 difficulty: Difficulty.easy,
-//                 reps: 10,
-//                 requirements: Equipment(resistanceBands: true)),
-//
+    static let resistanceBandPulls =
+        Exercise(
+            name: "Resistance Band Pulls",
+            description: "Pull band down behind back.",
+            variations: [
+                Variation(
+                    name: "Basic",
+                    description: nil,
+                    difficulty: Difficulty.easy,
+                    equipment: Equipment(resistanceBands: true),
+                    reps: 12,
+                    seconds: nil
+                )
+            ]
+        )
+
+    static let sidePlanks =
+        Exercise(
+            name: "Side Planks",
+            description: "",
+            variations: [
+                Variation(
+                    name: "Basic L/R",
+                    description: nil,
+                    difficulty: Difficulty.easy,
+                    equipment: nil,
+                    reps: 2,
+                    seconds: 20
+                )
+            ]
+        )
+
+    static let allArmExercises = [inclinePushup, resistanceBandPulls, sidePlanks]
+
+    static let squats =
+        Exercise(
+            name: "Squats",
+            description: "You know it. You love it. Remember to lean back.",
+            variations: [
+                Variation(
+                    name: "Basic",
+                    description: nil,
+                    difficulty: Difficulty.easy,
+                    equipment: nil,
+                    reps: 12,
+                    seconds: 0
+                ),
+                Variation(
+                    name: "With single weight (L/R)",
+                    description: nil,
+                    difficulty: Difficulty.easy,
+                    equipment: Equipment(weight: true),
+                    reps: 12,
+                    seconds: 2
+                )
+            ]
+        )
+
+    static let gluteBridge =
+        Exercise(
+            name: "Glute Bridge",
+            description: "Lie on your back, push up into shoulder bridge. Alternate lifting up each leg",
+            variations: [
+                Variation(
+                    name: "Basic (L/R)",
+                    description: nil,
+                    difficulty: Difficulty.easy,
+                    equipment: nil,
+                    reps: 12,
+                    seconds: 0
+                )
+            ]
+        )
+
+    static let hamCurls =
+        Exercise(
+            name: "Ham Curls",
+            description: "Lie on your back, put legs on ball. Draw ball in and out using legs. We hates it.",
+            variations: [
+                Variation(
+                    name: "Basic (L/R)",
+                    description: nil,
+                    difficulty: Difficulty.easy,
+                    equipment: nil,
+                    reps: 12,
+                    seconds: 0
+                ),
+                Variation(
+                    name: "Single Leg",
+                    description: "Draw ball in with both legs, push back out using one. Alternate legs.",
+                    difficulty: Difficulty.medium,
+                    equipment: nil,
+                    reps: 12,
+                    seconds: 0
+                )
+            ]
+        )
+
+    static let splitSquats =
+        Exercise(
+            name: "Split Squats",
+            description: "Like a lunge, but do not return to standing. Full reps done on same leg, keep 2/3 weight on front leg.",
+            variations: [
+                Variation(
+                    name: "Basic (L/R)",
+                    description: nil,
+                    difficulty: Difficulty.easy,
+                    equipment: nil,
+                    reps: 12,
+                    seconds: 0
+                ),
+                Variation(
+                    name: "With Weights (L/R)",
+                    description: nil,
+                    difficulty: Difficulty.medium,
+                    equipment: nil,
+                    reps: 12,
+                    seconds: 0
+                ),
+                Variation(
+                    name: "Bulgarian (L/R)",
+                    description: "Back leg is placed behind on bench. Add single weight if you have it.",
+                    difficulty: Difficulty.medium,
+                    equipment: Equipment(bench: true),
+                    reps: 12,
+                    seconds: 0
+                )
+            ]
+        )
+
+    static let lunges =
+        Exercise(
+            name: "Lunges",
+            description: "Like a lunge, because it is a lunge. Start standing, step forward and lunge it out.",
+            variations: [
+                Variation(
+                    name: "Basic (L/R)",
+                    description: nil,
+                    difficulty: Difficulty.easy,
+                    equipment: nil,
+                    reps: 12,
+                    seconds: 0
+                ),
+                Variation(
+                    name: "With Weights (L/R)",
+                    description: nil,
+                    difficulty: Difficulty.medium,
+                    equipment: nil,
+                    reps: 12,
+                    seconds: 0
+                )
+            ]
+        )
+
+    static let suitcaseHinge =
+        Exercise(
+            name: "Suitcase Hinge",
+            description: "Hinge from waist, lean forward on one leg. Keep standing leg locked and back straight. Keep core and glutes active. Try not to fall over.",
+            variations: [
+                Variation(
+                    name: "With Weight (L/R)",
+                    description: "Hold weight in opposite than standing hand.",
+                    difficulty: Difficulty.easy,
+                    equipment: Equipment(weight: true),
+                    reps: 12,
+                    seconds: 0
+                )
+            ]
+        )
+
+    static let monsterWalks =
+        Exercise(
+            name: "Monster Walks",
+            description: "Put looped resistance band around the mid foot, start in a high squat position and then push outside foot out to walk laterally. Take X steps to one side and then X to the other side.",
+            variations: [
+                Variation(
+                    name: "Basic",
+                    description: "",
+                    difficulty: Difficulty.easy,
+                    equipment: Equipment(resistanceBands: true),
+                    reps: 12,
+                    seconds: 0
+                )
+            ]
+        )
+
 //        Exercise(title: "Wall Sits",
 //                 difficulty: Difficulty.easy,
 //                 reps: 1,
 //                 hasTimerSeconds: 30),
 //
-//        Exercise(title: "Bulgarian Squats (L/R)",
-//                 difficulty: Difficulty.easy,
-//                 reps: 12,
-//                 requirements: Equipment(chair: true)),
-//
-//        Exercise(title: "Suitcase Hinge (L/R)",
-//                 difficulty: Difficulty.easy,
-//                 reps: 12,
-//                 requirements: Equipment(weight: true))
 //    ]
+
+    static let allLegExercises = [squats, gluteBridge, hamCurls, splitSquats, lunges, suitcaseHinge, monsterWalks]
 }
 

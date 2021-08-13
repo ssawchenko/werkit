@@ -41,22 +41,22 @@ class ViewController: UIViewController {
     }
 
     @IBAction func clickedWerkit(_ sender: UIButton) {
-        //let hasEquipment = Equipment(sweedishBall: true, resistanceBands: true)
-        let hasEquipment = Equipment(hasAll: true)
+        let hasEquipment = Equipment(sweedishBall: true, resistanceBands: true)
+        //let hasEquipment = Equipment(hasAll: true)
         let exercises = personalTrainer.generateWorkout(userEquipment: hasEquipment)
 
         // For now force exercise to be hardcoded to second, but will be based on custom UI component eventually
         setupTimer(exercise: exercises[1])
 
-        firstLabel.text = exercises[0].title
-        secondLabel.text = exercises[1].title
-        thirdLabel.text = exercises[2].title
+        firstLabel.text = exercises[0].name
+        secondLabel.text = exercises[1].name
+        thirdLabel.text = exercises[2].name
     }
 
     private func setupTimer(exercise: Exercise) {
         selectedExercise = exercise
-        totalTime = exercise.hasTimerSeconds
-        timerLabel.text = "\(totalTime) seconds"
+        //totalTime = exercise.hasTimerSeconds
+        //timerLabel.text = "\(totalTime) seconds"
     }
 
     @IBAction func clickedStartTimer(_ sender: Any) {
@@ -73,18 +73,18 @@ class ViewController: UIViewController {
         // Now we can start the actual exercise timer.
         secondsPassed = 1
         timerLabel.text = "\(totalTime) seconds"
+
+        playSound(soundName: "B", repeatNum: 1)
+
         exerciseTimer = Timer.scheduledTimer(timeInterval: 1.0, target:self, selector: #selector(updateTimer), userInfo:nil, repeats: true)
     }
 
     @objc private func updateTimer() {
         if secondsPassed < totalTime {
             let progress = Float(secondsPassed) / Float(totalTime)
-            print(progress)
             let remainingTime = totalTime - secondsPassed
-
             timerProgressBar.progress = progress
             timerLabel.text = "\(remainingTime) seconds"
-
             secondsPassed += 1
         } else {
             timerProgressBar.progress = 1.0
@@ -93,15 +93,17 @@ class ViewController: UIViewController {
         }
     }
 
-    func playSound(soundName: String) {
-        print("Playing sound \(soundName)")
+    // Lots of empty space at end of sound files, cannot play them on repeat easily
+    // todo issue playing sound on emulator; crashing
+    func playSound(soundName: String, repeatNum: Int = 0) {
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "wav") else {
-            // handle file not found here
+            print("Could not find sound resource \(soundName)")
+            // todo handle file not found here
             return
         }
+        
         player = try! AVAudioPlayer(contentsOf: url)
+        player.numberOfLoops = repeatNum
         player.play()
     }
-
 }
-

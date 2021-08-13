@@ -9,57 +9,42 @@ import Foundation
 
 struct PersonalTrainer {
 
-    let allCoreExersises: [Exercise] = [
-        Exercise(title: "Dead Bug w/Band",
-                 reps: 20,
-                 requirements: Equipment(resistanceBands: true)),
-        Exercise(title: "Dead Bug w/Ball",
-                 reps: 20,
-                 requirements: Equipment(sweedishBall: true)),
-        Exercise(title: "Windshield Wipers", reps: 20)
-    ]
-
-    let allArmExercises: [Exercise] = [
-        Exercise(title: "Incline Pushups", reps: 10),
-        Exercise(title: "Resistance Band Pulls",
-                 reps: 10,
-                 requirements: Equipment(resistanceBands: true)),
-        Exercise(title: "Side Planks",
-                 reps: 2,
-                 hasTimerSeconds: 20)
-    ]
-
-    let allLegExercises: [Exercise] = [
-        Exercise(title: "Squats w/Weights", reps: 20),
-        Exercise(title: "Ham Curls", reps: 16),
-        Exercise(title: "Split Squats w/Weights", reps: 10),
-        Exercise(title: "Lunges w/Weights", reps: 10),
-        Exercise(title: "Monster Walks",
-                 reps: 2,
-                 requirements: Equipment(resistanceBands: true)),
-        Exercise(title: "Wall Sits", reps: 1, hasTimerSeconds: 30)
-    ]
-
     func generateWorkout(userEquipment: Equipment) -> [Exercise] {
-        var firstExerciseList = getDoableExercises(allCoreExersises, userEquipment)
-        var secondExerciseList = getDoableExercises(allArmExercises, userEquipment)
-        var thirdExerciseList = getDoableExercises(allLegExercises, userEquipment)
+        var firstExerciseList = getDoableExercises(Exercises.allCoreExercises, userEquipment)
+        var secondExerciseList = getDoableExercises(Exercises.allArmExercises, userEquipment)
+        var thirdExerciseList = getDoableExercises(Exercises.allLegExercises, userEquipment)
 
         var result: [Exercise] = []
-        result.append(removeRandom(&firstExerciseList))
-        result.append(removeRandom(&secondExerciseList))
-        result.append(removeRandom(&thirdExerciseList))
+        result.append(chooseRandomAndRemove(&firstExerciseList))
+        result.append(chooseRandomAndRemove(&secondExerciseList))
+        result.append(chooseRandomAndRemove(&thirdExerciseList))
 
         return result
     }
 
-    private func getDoableExercises(_ exercises: [Exercise], _ userEquipment: Equipment) -> [Exercise] {
-        return exercises.filter { exercise in
-            exercise.canBeDone(userHasEquipment: userEquipment)
-        }
+    private func selectVariantFor(_ exercise: Exercise) -> Variation {
+        return exercise.variations.randomElement()!
     }
 
-    private func removeRandom(_ excerises: inout [Exercise]) -> Exercise {
+    private func getDoableExercises(_ exercises: [Exercise], _ userEquipment: Equipment) -> [Exercise] {
+
+        return exercises
+            .map { exercise in
+                // Filter out all variants of the exercise that we do not have equipment for.
+                let variations = exercise.doableVariations(userHasEquipment: userEquipment)
+
+                // If no doable variations available, return nil, else
+                // return a copy of the exercise with only the doable variants.
+                if (variations.isEmpty) {
+                    return nil
+                } else {
+                    return Exercise(name: exercise.name, description: exercise.description, variations: variations)
+                }
+            }
+            .compactMap{$0}
+    }
+
+    private func chooseRandomAndRemove(_ excerises: inout [Exercise]) -> Exercise {
         let index = Int.random(in: 0..<excerises.count)
         return excerises.remove(at: index)
     }

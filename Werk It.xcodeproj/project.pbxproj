@@ -13,7 +13,12 @@
 		4E0ECDB026BF572C00D6324D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E0ECDAE26BF572C00D6324D /* Main.storyboard */; };
 		4E0ECDB226BF572D00D6324D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E0ECDB126BF572D00D6324D /* Assets.xcassets */; };
 		4E0ECDB526BF572D00D6324D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E0ECDB326BF572D00D6324D /* LaunchScreen.storyboard */; };
-		4EAA3EFA26C236E3005B9868 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA3EF926C236E3005B9868 /* Exercise.swift */; };
+		4E294A6B26C394EC002BA36E /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E294A6A26C394EC002BA36E /* Exercises.swift */; };
+		4E294A6D26C39691002BA36E /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E294A6C26C39691002BA36E /* Difficulty.swift */; };
+		4E294A6F26C39EA4002BA36E /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E294A6E26C39EA4002BA36E /* Body.swift */; };
+		4E294A7526C4C5F6002BA36E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E294A7426C4C5F6002BA36E /* Exercise.swift */; };
+		4E294A7726C4C624002BA36E /* Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E294A7626C4C624002BA36E /* Variation.swift */; };
+		4EAA3EFA26C236E3005B9868 /* Exercise_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA3EF926C236E3005B9868 /* Exercise_old.swift */; };
 		4EAA3EFD26C237B4005B9868 /* PersonalTrainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA3EFC26C237B4005B9868 /* PersonalTrainer.swift */; };
 		4EAA3EFF26C240A7005B9868 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAA3EFE26C240A7005B9868 /* Equipment.swift */; };
 		4EAA3F0926C255F5005B9868 /* F.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4EAA3F0226C255F5005B9868 /* F.wav */; };
@@ -34,7 +39,12 @@
 		4E0ECDB126BF572D00D6324D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E0ECDB426BF572D00D6324D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E0ECDB626BF572D00D6324D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EAA3EF926C236E3005B9868 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		4E294A6A26C394EC002BA36E /* Exercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercises.swift; sourceTree = "<group>"; };
+		4E294A6C26C39691002BA36E /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		4E294A6E26C39EA4002BA36E /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
+		4E294A7426C4C5F6002BA36E /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		4E294A7626C4C624002BA36E /* Variation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variation.swift; sourceTree = "<group>"; };
+		4EAA3EF926C236E3005B9868 /* Exercise_old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise_old.swift; sourceTree = "<group>"; };
 		4EAA3EFC26C237B4005B9868 /* PersonalTrainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalTrainer.swift; sourceTree = "<group>"; };
 		4EAA3EFE26C240A7005B9868 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		4EAA3F0226C255F5005B9868 /* F.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = F.wav; sourceTree = "<group>"; };
@@ -108,9 +118,14 @@
 		4EAA3EFB26C2370A005B9868 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4EAA3EF926C236E3005B9868 /* Exercise.swift */,
-				4EAA3EFC26C237B4005B9868 /* PersonalTrainer.swift */,
+				4EAA3EF926C236E3005B9868 /* Exercise_old.swift */,
+				4E294A6A26C394EC002BA36E /* Exercises.swift */,
 				4EAA3EFE26C240A7005B9868 /* Equipment.swift */,
+				4EAA3EFC26C237B4005B9868 /* PersonalTrainer.swift */,
+				4E294A6C26C39691002BA36E /* Difficulty.swift */,
+				4E294A6E26C39EA4002BA36E /* Body.swift */,
+				4E294A7426C4C5F6002BA36E /* Exercise.swift */,
+				4E294A7626C4C624002BA36E /* Variation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,10 +222,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E0ECDAD26BF572C00D6324D /* ViewController.swift in Sources */,
-				4EAA3EFA26C236E3005B9868 /* Exercise.swift in Sources */,
+				4EAA3EFA26C236E3005B9868 /* Exercise_old.swift in Sources */,
 				4E0ECDA926BF572C00D6324D /* AppDelegate.swift in Sources */,
+				4E294A6F26C39EA4002BA36E /* Body.swift in Sources */,
+				4E294A6B26C394EC002BA36E /* Exercises.swift in Sources */,
 				4EAA3EFF26C240A7005B9868 /* Equipment.swift in Sources */,
+				4E294A7726C4C624002BA36E /* Variation.swift in Sources */,
+				4E294A7526C4C5F6002BA36E /* Exercise.swift in Sources */,
 				4EAA3EFD26C237B4005B9868 /* PersonalTrainer.swift in Sources */,
+				4E294A6D26C39691002BA36E /* Difficulty.swift in Sources */,
 				4E0ECDAB26BF572C00D6324D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,41 +1,23 @@
 //
-//  Exercise.swift
+//  Exercise2.swift
 //  Werk It
 //
-//  Created by Shayla Sawchenko on 2021-08-09.
+//  Created by Shayla Sawchenko on 2021-08-11.
 //
 
 import Foundation
 
 struct Exercise {
-    let title: String
-    let reps: Int
-    let requirements: Equipment
-    let hasTimerSeconds: Int
+    let name: String
+    let description: String
+    let variations: [Variation]
 
-    init(title: String,
-         reps: Int,
-         requirements: Equipment = Equipment(),
-         hasTimerSeconds: Int = 0) {
-        self.title = title
-        self.reps = reps
-        self.requirements = requirements
-        self.hasTimerSeconds = hasTimerSeconds
-    }
-
-    func meetsRequirements(_ requirements: Equipment) {
-        return
-    }
-
-    func canBeDone(userHasEquipment: Equipment) -> Bool {
-        if (requirements.sweedishBall && !userHasEquipment.sweedishBall) {
-            return false
+    func doableVariations(userHasEquipment: Equipment) -> [Variation] {
+        return variations.filter { variation in
+            guard let equipment = variation.equipment else {
+                return true
+            }
+            return userHasEquipment.meetsRequirements(requirements: equipment)
         }
-
-        if (requirements.resistanceBands && !userHasEquipment.resistanceBands) {
-            return false
-        }
-
-        return true
     }
 }
